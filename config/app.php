@@ -177,6 +177,8 @@ return [
         App\Providers\ViewServiceProvider::class,
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        //ip check
+        Stevebauman\Location\LocationServiceProvider::class,
     ],
 
     /*
@@ -230,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Location' => Stevebauman\Location\Facades\Location::class,
     ],
 
 ];

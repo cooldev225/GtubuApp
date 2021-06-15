@@ -9,6 +9,7 @@ use App\Http\Controllers\Util\DbUtil;
 use Illuminate\Support\Facades\Cookie;
 
 use App\Models\Category;
+use App\Models\National;
 class DashboardComposer
 {
     public function __construct()
@@ -31,6 +32,7 @@ class DashboardComposer
 
         if($notification=DbUtil::getDevAlert()!='')$view->with('notification', $notification);
         $view->with('categories',Category::orderBy('sort')->get());
+        $view->with('nationals',National::select()->get());
 
         if(request()->get('lang')){
             app()->setLocale(request()->get('lang'));

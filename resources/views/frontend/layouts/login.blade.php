@@ -42,9 +42,9 @@
                             <div class="form-group">
                                 <lavel>país</lavel>								   
                                 <select class="form-control" id="national">
-                                    <option value="1">Columbia</option>
-                                    <option value="2">México</option>
-                                    <option value="3">Brasil</option>
+                                    @foreach($nationals as $national)
+                                    <option value="{{$national['id']}}">{{$national['name']}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">	

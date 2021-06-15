@@ -9,7 +9,7 @@
 		jQuery.ajax({
             type: 'POST',
             dataType: 'json',
-            url: needlogin_object.ajaxurl,
+            url: ajax_login_object.ajaxurl,
             data: { 
                 'action': 'listingpro_loginpopup',
                 'lpNonce' : jQuery('#lpNonce').val()
@@ -40,7 +40,7 @@
         jQuery.ajax({
             type: 'POST',
             dataType: 'json',
-            url: needlogin_object.ajaxurl,
+            url: ajax_login_object.ajaxurl,
             data: {
                 'action': 'listingpro_loginpopup',
                 'lpNonce' : jQuery('#lpNonce').val()

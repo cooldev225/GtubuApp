@@ -54,6 +54,7 @@
     /* ]]> */
     </script>
     <script type='text/javascript' src='/frontend/js/login.js' id='ajax-login-script-js'></script>
+    <script type='text/javascript' src='/frontend/js/needlogin-ajax.js' id='ajax-login-script-js'></script>
     <script type='text/javascript' src='/frontend/js/search-ajax.js' id='search-ajax-script-js'></script>
     <script type='text/javascript' src='/frontend/js/checkout.js' id='stripejs-js'></script>
     <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDQt64oivgdLy88A3j6-_Yl-4wP1Y1dz8s&#038;libraries=places' id='mapsjs-js'></script>

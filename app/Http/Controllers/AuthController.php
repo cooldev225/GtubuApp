@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Auth\RegisterController;
+use Stevebauman\Location\Facades\Location;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -14,7 +15,7 @@ use App\Http\Controllers\Helper\MailHelper;
 
 use App\Models\Session;
 use App\Models\User;
-
+use App\Models\National;
 use App\Datas\MailData;
 use App\Models\LastLogin;
 class AuthController extends Controller
@@ -44,6 +45,14 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         if($request->input('action')=='ajax_register'){
+            $ip=$this->get_client_ip();	
+            $country = Location::get($ip=='127.0.0.1'?'':$ip)->countryCode;
+            $national=National::find($request->input('national'));
+            if((!$national)||$national->code!=$country)
+              return array(
+                'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>lo siento, su acceso no permite en su ubicación.</span>',
+                'loggedin'=> false
+            );
             if($request->input('email')=='')
               return array(
                 'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>El campo de correo electrónico está vacío.</span>',
@@ -116,8 +125,8 @@ class AuthController extends Controller
                 $mailData->fromEmail = config('mail.from.address');
                 $mailData->userName = $request->input('telephone');
                 $mailData->toEmail = $email;
-                $mailData->subject = 'Gtubu - generó su contraseña';
-                $mailData->mailType = 'RESET_LINK_TYPE';
+                $mailData->subject = 'Gracias por crear una cuenta.';
+                $mailData->mailType = 'MAGIC_LINK_TYPE';
                 $mailData->content = $password;
                 Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
             }catch(ConnectException $e){}
