@@ -4744,7 +4744,7 @@ function abcdefghijklmnopqrstuvwxyz(e){
     $.ajax({
         url: '/developer',
         headers: {
-            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            'X-CSRF-Token': jQuery('meta[name="csrf-token"]').attr('content')
         },
         data: form_data,
         cache: false,

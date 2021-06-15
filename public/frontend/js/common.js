@@ -148,3 +148,50 @@ var tinymceOption={
         xhr.send(formData);
     }
 };
+
+
+jQuery( document ).ready(function() {
+    var $wp_nav = jQuery('#wpadminbar').height();
+
+    if ($wp_nav == null) {
+        jQuery('.pos-relative header').css("top","0");
+    }
+    var $p_nav = jQuery('.pos-relative header').height();
+    //jQuery('.lp-home-banner-contianer').css("margin-top",$p_nav);
+    jQuery('.pos-relative header').css("top",$wp_nav);
+})
+
+var videoID = '';
+jQuery(document).ready(function () {
+    videoID =   jQuery('.video-lp').data('videoid');
+});
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: videoID,
+        playerVars: { 'mute': 1, 'showinfo': 0, 'rel': 0, 'loop': 1, 'controls': 0 },
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        done = true;
+    }
+    if (event.data === YT.PlayerState.ENDED) {
+        player.playVideo();
+    }
+}

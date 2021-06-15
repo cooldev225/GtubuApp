@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\AttachFile;
 class FileUtil extends Controller{
     public function uploadFile(Request $request){
         $res="error";
@@ -49,10 +49,22 @@ class FileUtil extends Controller{
             $res.=$line;
         }
         $response=str_replace(",}","}",str_replace("Array","",str_replace("\n","",substr($res,0,strlen($res)-1))));
-        //$response="$response=Array(\n    'Accuracy' => '90',\n    'Latitude' => '53.277720488429026',\n    'Longitude' => '-9.012038778269686',\n    'Timestamp' => 'Fri Jul 05 2013 11:59:34 GMT+0100 (IST)'\n);";
-        //$response=json_encode(eval($response));
-        
         header("Content-type: application/json");
         exit ($response);
+    }
+
+    public static function attachFile($file,$kind,$id){
+        $path='upload/attach_business';
+        //@mkdir($path, 0777, true);
+        $path=$file->store($path);
+        $row=new AttachFile;
+        $row->table_kind=$kind;
+        $row->table_id=$id;
+        $row->filename=$file->getClientOriginalName();
+        $row->path=$path;
+        $row->body='';
+        $row->flag=0;
+        $row->created_by=Auth::id();
+        $row->save();
     }
 }

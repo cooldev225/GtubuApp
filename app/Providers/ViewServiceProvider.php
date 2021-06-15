@@ -24,21 +24,12 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Using class based composers...
-        // View::composer(
-        //     'profile', 'App\Http\View\Composers\ProfileComposer'
-        // );
-
-        // Using Closure based composers...
         View::composer(
             [
+                'frontend.layouts.home',
                 'frontend.layouts.dashboard',
-                'frontend.home',
-                'frontend.project',
-                'frontend.group',
-                'frontend.document',
-                'frontend.task',
-                'frontend.taskmap',
+                'frontend.layouts.searchfrm',
+                'frontend.layouts.schtopfrm',
             ],
             'App\Http\Binds\DashboardComposer'
         );

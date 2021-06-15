@@ -43,6 +43,101 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        if($request->input('action')=='ajax_register'){
+            if($request->input('email')=='')
+              return array(
+                'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>El campo de correo electrónico está vacío.</span>',
+                'loggedin'=> false
+            );
+            if(!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $request->input('email')))
+              return array(
+                'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>El campo de correo electrónico no es válido.</span>',
+                'loggedin'=> false
+            );
+            if($request->input('telephone')=='')
+              return array(
+                'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>El campo de teléfono está vacío.</span>',
+                'loggedin'=> false
+            );
+            $username=self::getRandomString();
+            if(count(User::select()->where('username',$request->input('username'))->get()))
+                return array(
+                    'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>El nombre de usuario ya existe.</span>',
+                    'loggedin'=> false,
+                    'password'=>''
+                );
+            if(count(User::select()->where('email',$request->input('email'))->get()))
+                return array(
+                    'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>La dirección de correo electrónico ya existe.</span>',
+                    'loggedin'=> false,
+                    'password'=>''
+                );
+            $password=self::getRandomString();
+            $email=$request->input('email');
+            $user = User::create([
+                'username' => $username,
+                'email' => $email,
+                'password' => Hash::make($password),
+                'national'=>$request->input('national'),
+                'phone_mobile'=>$request->input('telephone'),
+                'sms_allow'=>$request->input('smsallow')=='on'||$request->input('smsallow')=='true'?true:false
+            ]);
+            /*
+            if (Auth::attempt(
+                $request->validate([
+                    'email'     => 'required',
+                    'password'  => 'required'
+                ])
+            ))
+             if(auth::check()){
+                $session=new Session;
+                $session->id=session()->getId();
+                $session->user_id=Auth::id();
+                $session->ip_address=$this->get_client_ip();
+                $session->user_agent='';
+                $session->payload='login';
+                $session->last_activity=1;
+                $session->save();
+
+                $request->session()->regenerate();
+                $row=new LastLogin;
+                $row->userId=Auth::id();
+                $row->time=date("Y-m-d H:i:s");
+                $row->save();
+            }else return array(
+                'message'=> '<span class="alert alert-primary"><i class="fa fa-times" aria-hidden="true"></i>Error.</span>',
+                'loggedin'=> false,
+                'password'=>''
+            );
+            */
+            try{
+                $mailData = new MailData();
+                $mailData->template='temps.password_changed';
+                $mailData->fromEmail = config('mail.from.address');
+                $mailData->userName = $request->input('telephone');
+                $mailData->toEmail = $email;
+                $mailData->subject = 'Gtubu - generó su contraseña';
+                $mailData->mailType = 'RESET_LINK_TYPE';
+                $mailData->content = $password;
+                Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
+            }catch(ConnectException $e){}
+            return array(
+                'message'=> '<span class="alert alert-primary"><i class="fa fa-times" aria-hidden="true"></i>Por favor revise su casilla de correo electrónico.</span>',
+                'loggedin'=> false,
+                'password'=>''
+            );
+        }
+        //login
+        if($request->input('username')=='')
+          return array(
+            'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>El campo de nombre de usuario está vacío.</span>',
+            'loggedin'=> false
+        );
+        if($request->input('password')=='')
+          return array(
+            'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>El campo de contraseña está vacío.</span>',
+            'loggedin'=> false
+        );
         $validator = $this->selectAuthType($request) ?
             $request->validate([
                 'email'     => 'required',
@@ -54,7 +149,6 @@ class AuthController extends Controller
                 'password'  => 'required'
             ])
         ;
-
         if (Auth::attempt($validator))
         {
             if(auth::check()){
@@ -70,7 +164,10 @@ class AuthController extends Controller
                         //$user->logout = 1;
                         //$user->save();
                         session()->flash('logout', "You are Logged in on other devices");
-                        return view('frontend.auth.login', ['page_title' => 'Login','error'=>"double_attempt"]);
+                        return array(
+                            'message'=> 'You are Logged in on other devices',
+                            'loggedin'=> false
+                        );
                     }
                 }
                 $session=new Session;
@@ -87,11 +184,21 @@ class AuthController extends Controller
             $row->userId=Auth::id();
             $row->time=date("Y-m-d H:i:s");
             $row->save();
-            return redirect()->intended('home');
+            return array(
+                'message'=> '<span class="alert alert-primary"><i class="fa fa-times" aria-hidden="true"></i>¡¡Exitosa!</span>',
+                'loggedin'=> true
+            );
         }
         else
         {
-            return view('frontend.auth.login', ['page_title' => 'Login']);
+            $msg='error';
+            if(!User::select()->where('email',$request->input('username'))->count())
+                $msg='<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>No existe el correo electrónico.</span>';
+            else $msg='<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>La contraseña es incorrecta.</span>';
+            return array(
+                'message'=> $msg,
+                'loggedin'=> false
+            );
         }
     }
 
@@ -101,7 +208,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/login');
+        return redirect('/');
     }
 
     public function forgot(Request $request)
@@ -126,7 +233,7 @@ class AuthController extends Controller
             $mailData->fromEmail = config('mail.from.address');
             $mailData->userName = $user->userName;
             $mailData->toEmail = $email;
-            $mailData->subject = 'Witbooster - Password Reset';
+            $mailData->subject = 'Gtubu - Password Reset';
             $mailData->mailType = 'RESET_LINK_TYPE';
             $mailData->content = $newPassword;
 
@@ -161,4 +268,26 @@ class AuthController extends Controller
 
         return $ipaddress;
     }
+
+    public static function getRandomString(){
+		$res="";
+		//$alpha=explode('::','ABCDEFGHJKLMNOPQRSTUVWXYZ::abcdefghijklmnopqrstuvwxyz::0123456789::!~@#%^&*()_+-[];::ABCWX];:rstDEMJ#%^&*()KLZabmnoPQRSTUcpqI6789!~@deyz012345NYFG_+-[OfghijklVuvwxH');
+		$alpha=explode('::','ABCDEFGHJKLMNOPQRSTUVWXYZ::abcdefghijklmnopqrstuvwxyz::0123456789::KLZabmnoPQRSTU::cpqI6789uvwxH::879JK7822::qwe23EW3::9032JJFFDR::Nknsdf3452::890SAFqweqwsdf23ewfdf234rfdfst');
+        $d=mktime(date('H'),date('i'),date('s'),date('m'),date('d'),date('Y'));
+		$exp=explode(',','0,2,4,1,3,3,0,4,2,1');
+		for($i=0;$i<10;$i++)$inx[$i]=0;
+		for($i=0;$i<10;$i++){
+			while(1){
+				$p=rand(1,$d%rand(1,100))%10;
+				if(!$inx[$p]){
+					$r=rand(1,$d)%strlen($alpha[$exp[$i]]);
+					$pos[$p]=substr($alpha[$exp[$i]],$r,1);
+					$inx[$p]=1;
+					break;
+				}
+			}
+		}
+		for($i=0;$i<10;$i++)$res.=$pos[$i];
+		return $res;
+	}
 }

@@ -196,12 +196,6 @@ var _ = {
 			try {
 				throw new Error();
 			} catch (err) {
-				// Get file src url from stack. Specifically works with the format of stack traces in IE.
-				// A stack will look like this:
-				//
-				// Error
-				//    at _.util.currentScript (http://localhost/components/prism-core.js:119:5)
-				//    at Global code (http://localhost/components/prism-core.js:606:1)
 
 				var src = (/at [^(\r\n]*\((.*):.+:.+\)$/i.exec(err.stack) || [])[1];
 				if (src) {

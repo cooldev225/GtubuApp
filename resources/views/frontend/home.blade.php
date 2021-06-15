@@ -1,232 +1,621 @@
-@extends('frontend.layouts.dashboard')
+@extends('frontend.layouts.home')
 @inject('dateFormat', 'App\Services\DateService')
 @section('content')
+<body class="home page-template-default page page-id-156 listing-skeleton-view-grid_view wpb-js-composer js-comp-ver-6.4.1 vc_responsive" data-submitlink="/submit-listing/" data-sliderstyle="style2" data-defaultmaplat="0" data-defaultmaplot="-0" data-lpsearchmode="keyword" data-maplistingby="geolocaion" >
+	<input type="hidden" id="lpNonce" name="lpNonce" value="11a180ea92" /><input type="hidden" name="_wp_http_referer" value="/" />    <input type="hidden" id="start_of_weekk" value="1">
+	<div id="page"  data-detail-page-style="lp_detail_page_styles1" data-lpattern="with_region" data-sitelogo="/images/logo.png" data-site-url="/" data-ipapi="ip_api" data-lpcurrentloconhome="1" data-mtoken="0" data-mtype="openstreet" data-mstyle="mapbox.streets-basic"  class="clearfix lp_detail_page_styles1">
+        <div class="pos-relative header-front-page-wrap 1">
+            <div class="header-container  3  lp-header-bg " style="">                    
+                <!--================================full width with blue background====================================-->
+                <header class="header-without-topbar header-normal pos-relative lp-header-full-width">
+                    <div class="lp-header-overlay"></div>
+                    <div id="menu" class="small-screen">
+                        <a href="/submit-listing/" class="lpl-button lpl-add-listing-loggedout">Anunciate</a>
+                        <a class="lpl-button lp-right-15 app-view-popup-style" data-target="#app-view-login-popup">Sign In</a>
+                    </div>
+                    <div class="lp-menu-bar header-bg-color-class">
+                        <div class="fullwidth-header">
+                            <div class="row">
+                                <div class="col-md-2 col-xs-6 lp-logo-container">
+                                    <div class="lp-logo">
+                                        <a href="/">
+                                            <img src="/images/logo.png" alt="image" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="header-right-panel clearfix col-md-10 col-sm-10 col-xs-12">
+                                    <div class="col-xs-6 mobile-nav-icon">
+                                        <a href="#menu" class="nav-icon">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-9 col-xs-12 lp-menu-container clearfix pull-right">
+                                        <div class="pull-right">
+                                            <div class="lp-joinus-icon">
+                                                <div class="lp-join-now">
+                                                    <span>
+                                                        <img class="icon icons8-contacts" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADNElEQVRoge2ZLWhbURTHn3iig8IiIiomIgqrqJiomJgIrCKiomKig4iKioiKioiJiEJExURFRGEbRERMVERkENhE5BgTGUxEVERkUBERURFR8Zu45+5durzk3feRm7H8IRB455z3u9/3nOd5a6317wjYAcrAOdAEroAqcAhsuOabK8AHKsBX5qsP7LrmnSlgE+gasCMZhRpwDJwCDeBGnk+Bt8COa/Y/AjaAn0YDDgA/xNYH3j8YoUaY/VIlPQvwHdiKYO8De0AdGItvcxms86AKwL38rOe9bAoTacyzLBijglQE4jpBjHOJ8TFNNluItkAcJ4ixKzGGKaJZQ/QEopgwDgApYcUC0NtpIWEc5w3R227shQrkVqEhn4ThdYIYTyXGrzTZbCH04fYmQYznEqOfJpstRFUg3qUQ4zJNNluIA4H4nCDGtcQop8lmC1ESiElM/7zcCgD20+azAdE33lpMfx+4kBjttPlsQAYCETu/AIoSo5cmmy1E4vmNylcgwX0tsVDpLMAQqMbwr4mv88XuAx0BuYnhr6/wXVwnV8Aj4IcAvbDweyk+37LksxKqUgJQt/Cpi89VlmxWMnaeCZCLYJ8zplVxCYjRRZCbdObNd1lXOiFzt+WGieC6ohuTn2GTMxoBsOeCda5Qta2pATkGTlAFioL8HxnPR66ZQ2WcCQPCpbNKdzn6IhFcAPOow7ItozBGnRUVYHulG0JQDZkusNvSdqxSydTzPA9VOdTTaWGCBLSMKeh+wcsoNI0pBXARwa9m2N9LjOVWGlHnwCuCO5aGaROUT4/m+O8bdq0HndAFjsjyGwqq6n5GUHgGdTpfAttiUzeeNVBnS15+JbHVqolPAVUInxjPxqhS6sJbgm0jysCt8aIB6pvH5gzbU+COcE2Bs5COqhDUynRH/WUbpwE+6oONVh84jOC3I6PTkd4dy/86EbJJ1Ce6vvHe1qxOs2mIXgd3wEnsQPHfXzZGt0ecnIUgBR0ia8CFUAfoUFjsslDgCcHiK2XEaMOj04QpNgVzgg84X7LDs5MxzaMvfuCDtVPGQu2GAC0bJ3OrXTXdRm1EbmEo93ocd2TXWut/1W9KptrZf/2YyAAAAABJRU5ErkJggg==" alt="contacts">            
+                                                    </span>
+                                                    <a class="app-view-popup-style" data-target="#app-view-login-popup">Sign In</a>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right lp-add-listing-btn">
+                                                <ul>
+                                                    <li>
+                                                        <a href="/submit-listing/">
+                                                            <i class="fa fa-plus"></i>
+                                                            Anunciate
+                                                        </a>                                                    
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="pull-right padding-right-10">
+                                            <div class="lp-menu menu"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- ../menu-bar -->
+                </header>
+                <!--==================================Header Close=================================--><!-- Login Popup style2 -->
+                <div class="modal fade style2-popup-login" id="app-view-login-popup" role="dialog" style="overflow: visible !important; opacity: 1;">
+                    <div class="modal-dialog">                                                        
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="login-form-pop-tabs clearfix">
+                                    <ul>
+                                        <li><a href="#" class="signInClick active">Sign In</a></li>
+                                        <li><a href="#" class="signUpClick">Sign Up</a></li>                                                                    
+                                    </ul>
+                                    <a class="md-close" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i></a>                                                                    
+                                </div>                                                                
+                            </div>
+                            <div class="modal-body">                                                                
+                                <div class="lp-border-radius-8 login-form-popup-outer">
+                                    <div class="siginincontainer2">
+                                        <form id="login" class="form-horizontal margin-top-30"  method="post" data-lp-recaptcha="" data-lp-recaptcha-sitekey="">
+                                            <p class="status"></p>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="lpusername" name="lpusername" placeholder="UserName/Email"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" id="lppassword" name="lppassword" placeholder="Password"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="checkbox clearfix">
+                                                    <input id="check1" type="checkbox" name="remember" value="yes">
+                                                
+                                                    <a class="forgetPasswordClick pull-right" >Forgot Password</a>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" value="Sign in" class="lp-secondary-btn width-full btn-first-hover" />
+                                            </div>
+                                            <input type="hidden" id="security" name="security" value="b387a31ac2" /><input type="hidden" name="_wp_http_referer" value="/" />							
+                                        </form>
+                                    </div>
+                                    <div class="siginupcontainer2">
+                                        <form id="register" class="form-horizontal margin-top-30"  method="post" data-lp-recaptcha="" data-lp-recaptcha-sitekey="">
+                                            <p class="note">nota: tener estos datos verificados no significa que tenga una cuenta, hasta que publique un anuncio no se le asignará un nombre de usuario y contraseña</p>
+                                            <p class="status"></p>
+                                            <div class="form-group">
+                                                <lavel>país</lavel>								   
+                                                <select class="form-control" id="national">
+                                                    <option value="1">Columbia</option>
+                                                    <option value="2">México</option>
+                                                    <option value="3">Brasil</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">	
+                                                <lavel>Teléfono (10 dígitos)</lavel>								   
+                                                <input type="text" class="form-control" id="telephone" name="telephone"  placeholder="Número de teléfono"/>
+                                            </div>
+                                            <div class="form-group">							
+                                                <lavel>Correo electronico</lavel>					
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="Correo electronico"/>
+                                            </div>
+                                            <div class="form-group">	
+                                                <input type="checkbox" class="form-control" id="smsallow" name="smsallow""/>
+                                                <div class="inline-lavel">
+                                                    <lavel>Acepto recibir comunicaciones por SMS.</lavel>								   									
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input id="lp_usr_reg_btn" type="submit" value="Siguente paso" class="lp-secondary-btn width-full btn-first-hover" />
+                                            </div>
+                                            <input type="hidden" id="security2" name="security2" value="11ae3f07df" /><input type="hidden" name="_wp_http_referer" value="/" />							
+                                        </form>
+                                    </div>
+                                    <div class="forgetpasswordcontainer2">
+                                        <form class="form-horizontal margin-top-30" id="lp_forget_pass_form" action="#"  method="post">
+                                            <p class="status"></p>
+                                            <div class="form-group">
+                                                <input type="email" name="user_login" class="form-control" id="email3" placeholder="Email"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" name="submit" value="Get New Password" class="lp-secondary-btn width-full btn-first-hover" />
+                                                <input type="hidden" id="security3" name="security3" value="28763ecba2" /><input type="hidden" name="_wp_http_referer" value="/" />								</div>
+                                        </form>
+                                        <div class="pop-form-bottom">
+                                            <div class="bottom-links">
+                                                <a class="cancelClick" >Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Login Popup -->								
+                <div class="app-view-popup-style" data-target="#app-view-login-popup">
+                    <!--ajax based content-->
+                </div>
+                <!-- ../Login Popup -->
+                <div class="md-overlay"></div> <!-- Overlay for Popup -->
 
-<!--begin::Entry-->
-<div class="d-flex flex-column-fluid">
-    <!--begin::Container-->
-    <div class=" container ">
-        <!--begin::Notice-->
-        <?php if(isset($notification)){?>
-        <div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
-            <div class="alert-icon">
-                <span class="svg-icon svg-icon-primary svg-icon-xl"><!--begin::Svg Icon | path:assets/media/svg/icons/Tools/Compass.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-	            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-	                <rect x="0" y="0" width="24" height="24"/>
-	                <path d="M7.07744993,12.3040451 C7.72444571,13.0716094 8.54044565,13.6920474 9.46808594,14.1079953 L5,23 L4.5,18 L7.07744993,12.3040451 Z M14.5865511,14.2597864 C15.5319561,13.9019016 16.375416,13.3366121 17.0614026,12.6194459 L19.5,18 L19,23 L14.5865511,14.2597864 Z M12,3.55271368e-14 C12.8284271,3.53749572e-14 13.5,0.671572875 13.5,1.5 L13.5,4 L10.5,4 L10.5,1.5 C10.5,0.671572875 11.1715729,3.56793164e-14 12,3.55271368e-14 Z" fill="#000000" opacity="0.3"/>
-	                <path d="M12,10 C13.1045695,10 14,9.1045695 14,8 C14,6.8954305 13.1045695,6 12,6 C10.8954305,6 10,6.8954305 10,8 C10,9.1045695 10.8954305,10 12,10 Z M12,13 C9.23857625,13 7,10.7614237 7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 C17,10.7614237 14.7614237,13 12,13 Z" fill="#000000" fill-rule="nonzero"/>
-	            </g>
-	        </svg><!--end::Svg Icon--></span>    </div>
-            <div class="alert-text">
-                <?php echo $notification;?>
-            </div>
-        </div>
-    	<?php }?>
-        <!--end::Notice-->
-        <!--begin::Dashboard-->
-        <div class="row">
-        <div class="col-xl-2">
-                <!--begin::Stats Widget 26-->
-                <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(metronic/media/svg/shapes/abstract-1.svg)">
-                    <!--begin::ody-->
-                    <div class="card-body">
-                        <span class="svg-icon svg-icon-2x svg-icon-danger"><!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Group.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon points="0 0 24 0 24 24 0 24"/>
-                                <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-                                <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
-                            </g>
-                            </svg><!--end::Svg Icon-->
-                        </span>
-                        <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">{{$totalUser}}</span>
-                        <span class="font-weight-bold text-muted font-size-sm">Total of users</span>
-                    </div>
-                    <!--end::Body-->
-                </div>
-                <!--end::Stats Widget 26-->
-            </div>
-            <div class="col-xl-2">
-                <!--begin::Stats Widget 26-->
-                <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(metronic/media/svg/shapes/abstract-1.svg)">
-                    <!--begin::ody-->
-                    <div class="card-body">
-                    <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Bag2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"/>
-                                                    <path d="M5.94290508,4 L18.0570949,4 C18.5865712,4 19.0242774,4.41271535 19.0553693,4.94127798 L19.8754445,18.882556 C19.940307,19.9852194 19.0990032,20.9316862 17.9963398,20.9965487 C17.957234,20.9988491 17.9180691,21 17.8788957,21 L6.12110428,21 C5.01653478,21 4.12110428,20.1045695 4.12110428,19 C4.12110428,18.9608266 4.12225519,18.9216617 4.12455553,18.882556 L4.94463071,4.94127798 C4.97572263,4.41271535 5.41342877,4 5.94290508,4 Z" fill="#000000" opacity="0.3"/>
-                                                    <path d="M7,7 L9,7 C9,8.65685425 10.3431458,10 12,10 C13.6568542,10 15,8.65685425 15,7 L17,7 C17,9.76142375 14.7614237,12 12,12 C9.23857625,12 7,9.76142375 7,7 Z" fill="#000000"/>
-                                                </g>
-                                            </svg><!--end::Svg Icon--></span>
-                        <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block">{{$todayBooster}}</span>
-                        <span class="font-weight-bold text-muted font-size-sm">Today boosts used</span>
-                    </div>
-                    <!--end::Body-->
-                </div>
-                <!--end::Stats Widget 26-->
-            </div>
-            <div class="col-xl-2">
-                <!--begin::Stats Widget 26-->
-                <div class="card card-custom bg-info card-stretch gutter-b" >
-                    <!--begin::ody-->
-                    <div class="card-body">
-                    <span class="svg-icon svg-icon-white svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Cart1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"/>
-                                                    <path d="M18.1446364,11.84388 L17.4471627,16.0287218 C17.4463569,16.0335568 17.4455155,16.0383857 17.4446387,16.0432083 C17.345843,16.5865846 16.8252597,16.9469884 16.2818833,16.8481927 L4.91303792,14.7811299 C4.53842737,14.7130189 4.23500006,14.4380834 4.13039941,14.0719812 L2.30560137,7.68518803 C2.28007524,7.59584656 2.26712532,7.50338343 2.26712532,7.4104669 C2.26712532,6.85818215 2.71484057,6.4104669 3.26712532,6.4104669 L16.9929851,6.4104669 L17.606173,3.78251876 C17.7307772,3.24850086 18.2068633,2.87071314 18.7552257,2.87071314 L20.8200821,2.87071314 C21.4717328,2.87071314 22,3.39898039 22,4.05063106 C22,4.70228173 21.4717328,5.23054898 20.8200821,5.23054898 L19.6915238,5.23054898 L18.1446364,11.84388 Z" fill="#000000" opacity="0.3"/>
-                                                    <path d="M6.5,21 C5.67157288,21 5,20.3284271 5,19.5 C5,18.6715729 5.67157288,18 6.5,18 C7.32842712,18 8,18.6715729 8,19.5 C8,20.3284271 7.32842712,21 6.5,21 Z M15.5,21 C14.6715729,21 14,20.3284271 14,19.5 C14,18.6715729 14.6715729,18 15.5,18 C16.3284271,18 17,18.6715729 17,19.5 C17,20.3284271 16.3284271,21 15.5,21 Z" fill="#000000"/>
-                                                </g>
-                                            </svg><!--end::Svg Icon--></span>
-                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block">{{$todayPackageBought}}</span>
-                        <span class="font-weight-bold text-white font-size-sm">Today packs bought</span>
-                    </div>
-                    <!--end::Body-->
-                </div>
-                <!--end::Stats Widget 26-->
-            </div>
-            <div class="col-xl-2">
-                <!--begin::Stats Widget 26-->
-                <div class="card card-custom bg-info card-stretch gutter-b" >
-                    <!--begin::ody-->
-                    <div class="card-body">
-                    <span class="svg-icon svg-icon-white svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Cart1.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"/>
-                                                    <path d="M18.1446364,11.84388 L17.4471627,16.0287218 C17.4463569,16.0335568 17.4455155,16.0383857 17.4446387,16.0432083 C17.345843,16.5865846 16.8252597,16.9469884 16.2818833,16.8481927 L4.91303792,14.7811299 C4.53842737,14.7130189 4.23500006,14.4380834 4.13039941,14.0719812 L2.30560137,7.68518803 C2.28007524,7.59584656 2.26712532,7.50338343 2.26712532,7.4104669 C2.26712532,6.85818215 2.71484057,6.4104669 3.26712532,6.4104669 L16.9929851,6.4104669 L17.606173,3.78251876 C17.7307772,3.24850086 18.2068633,2.87071314 18.7552257,2.87071314 L20.8200821,2.87071314 C21.4717328,2.87071314 22,3.39898039 22,4.05063106 C22,4.70228173 21.4717328,5.23054898 20.8200821,5.23054898 L19.6915238,5.23054898 L18.1446364,11.84388 Z" fill="#000000" opacity="0.3"/>
-                                                    <path d="M6.5,21 C5.67157288,21 5,20.3284271 5,19.5 C5,18.6715729 5.67157288,18 6.5,18 C7.32842712,18 8,18.6715729 8,19.5 C8,20.3284271 7.32842712,21 6.5,21 Z M15.5,21 C14.6715729,21 14,20.3284271 14,19.5 C14,18.6715729 14.6715729,18 15.5,18 C16.3284271,18 17,18.6715729 17,19.5 C17,20.3284271 16.3284271,21 15.5,21 Z" fill="#000000"/>
-                                                </g>
-                                            </svg><!--end::Svg Icon--></span>
-                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block">{{$totalPackageBought}}</span>
-                        <span class="font-weight-bold text-white font-size-sm">Total of packs bought</span>
-                    </div>
-                    <!--end::Body-->
-                </div>
-                <!--end::Stats Widget 26-->
-            </div>
-            <div class="col-xl-2">
-                <!--begin::Stats Widget 26-->
-                <div class="card card-custom bg-danger card-stretch gutter-b" >
-                    <!--begin::ody-->
-                    <div class="card-body">
-                        <span class="svg-icon svg-icon-white svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Cart3.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M12,4.56204994 L7.76822128,9.6401844 C7.4146572,10.0644613 6.7840925,10.1217854 6.3598156,9.76822128 C5.9355387,9.4146572 5.87821464,8.7840925 6.23177872,8.3598156 L11.2317787,2.3598156 C11.6315738,1.88006147 12.3684262,1.88006147 12.7682213,2.3598156 L17.7682213,8.3598156 C18.1217854,8.7840925 18.0644613,9.4146572 17.6401844,9.76822128 C17.2159075,10.1217854 16.5853428,10.0644613 16.2317787,9.6401844 L12,4.56204994 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-                                <path d="M3.5,9 L20.5,9 C21.0522847,9 21.5,9.44771525 21.5,10 C21.5,10.132026 21.4738562,10.2627452 21.4230769,10.3846154 L17.7692308,19.1538462 C17.3034221,20.271787 16.2111026,21 15,21 L9,21 C7.78889745,21 6.6965779,20.271787 6.23076923,19.1538462 L2.57692308,10.3846154 C2.36450587,9.87481408 2.60558331,9.28934029 3.11538462,9.07692308 C3.23725479,9.02614384 3.36797398,9 3.5,9 Z M12,17 C13.1045695,17 14,16.1045695 14,15 C14,13.8954305 13.1045695,13 12,13 C10.8954305,13 10,13.8954305 10,15 C10,16.1045695 10.8954305,17 12,17 Z" fill="#000000"/>
-                            </g>
-                        </svg><!--end::Svg Icon--></span>
-                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block">${{$todayRevenue}}</span>
-                        <span class="font-weight-bold text-white  font-size-sm">Today revenue</span>
-                    </div>
-                    <!--end::Body-->
-                </div>
-                <!--end::Stats Widget 26-->
-            </div>
-            <div class="col-xl-2">
-                <!--begin::Stats Widget 26-->
-                <div class="card card-custom bg-danger card-stretch gutter-b">
-                    <!--begin::ody-->
-                    <div class="card-body">
-                        <span class="svg-icon svg-icon-white svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Shopping\Cart3.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <path d="M12,4.56204994 L7.76822128,9.6401844 C7.4146572,10.0644613 6.7840925,10.1217854 6.3598156,9.76822128 C5.9355387,9.4146572 5.87821464,8.7840925 6.23177872,8.3598156 L11.2317787,2.3598156 C11.6315738,1.88006147 12.3684262,1.88006147 12.7682213,2.3598156 L17.7682213,8.3598156 C18.1217854,8.7840925 18.0644613,9.4146572 17.6401844,9.76822128 C17.2159075,10.1217854 16.5853428,10.0644613 16.2317787,9.6401844 L12,4.56204994 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
-                                <path d="M3.5,9 L20.5,9 C21.0522847,9 21.5,9.44771525 21.5,10 C21.5,10.132026 21.4738562,10.2627452 21.4230769,10.3846154 L17.7692308,19.1538462 C17.3034221,20.271787 16.2111026,21 15,21 L9,21 C7.78889745,21 6.6965779,20.271787 6.23076923,19.1538462 L2.57692308,10.3846154 C2.36450587,9.87481408 2.60558331,9.28934029 3.11538462,9.07692308 C3.23725479,9.02614384 3.36797398,9 3.5,9 Z M12,17 C13.1045695,17 14,16.1045695 14,15 C14,13.8954305 13.1045695,13 12,13 C10.8954305,13 10,13.8954305 10,15 C10,16.1045695 10.8954305,17 12,17 Z" fill="#000000"/>
-                            </g>
-                        </svg><!--end::Svg Icon--></span>
-                        <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block">${{$totalRevenue}}</span>
-                        <span class="font-weight-bold text-white font-size-sm">Total of revenue</span>
-                    </div>
-                    <!--end::Body-->
-                </div>
-                <!--end::Stats Widget 26-->
-            </div>
-        </div>
-        <!--begin::Row-->
-        <div class="row">
-            <div class="col-lg-6">
-                <!--begin::Card-->
-                <div class="card card-custom gutter-b">
-                    <!--begin::Header-->
-                    <div class="card-header h-auto">
-                        <!--begin::Title-->
-                        <div class="card-title py-5">
-                            <h3 class="card-label">
-                                Packs Bought By Year($)
-                            </h3>
-                            <select class="form-control mr-2" id="chart_pack_os" style="max-width:80px;" name="param">
-                                <option value="0">_ALL_</option>
-                                <option value="1">Android</option>
-                                <option value="2">iOS</option>
-                            </select>
-                            <select class="form-control mr-2" id="chart_pack_name" style="max-width:100px;" name="param">
-                            <option value="0">_ALL_</option>
-                            @foreach($packList as $pack)
-                                <option value="{{$pack['id']}}">{{$pack['packageName']}}</option>
-                            @endforeach
-                            </select>
-                            <input type="text" class="form-control" id="chart_pack_date" style="width:60px;" readonly placeholder="Select date" value="{{date('Y')}}"/>
-                        </div>
-                        <!--end::Title-->
-                    </div>
-                    <!--end::Header-->
-                    <div class="card-body">
-                        <!--begin::Chart-->
-                        <div id="chart_1"></div>
-                        <!--end::Chart-->
-                    </div>
-                </div>
-                <!--end::Card-->
-            </div>
-            <div class="col-lg-6">
-                <!--begin::Card-->
-                <div class="card card-custom gutter-b">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <h3 class="card-label">
-                                Boost Used By Year(k)
-                            </h3>
-                            <select class="form-control mr-2" id="chart_star_name" style="max-width:100px;" name="param">
-                            <option value="0">_ALL_</option>
-                            @foreach($starList as $star)
-                                <option value="{{$star['id']}}">{{$star['stars']}}⭐️</option>
-                            @endforeach
-                            </select>
-                            <input type="text" class="form-control" id="chart_star_date" style="width:60px;" readonly placeholder="Select date" value="{{date('Y')}}"/>
+                <!-- top notificaton bar -->
+                <div class="lp-top-notification-bar"></div>
+                <!-- end top notification-bar -->	
+
+                <!-- popup for quick view --->		
+                <div class="md-modal md-effect-3" id="listing-preview-popup">
+                    <div class="container">
+                        <div class="md-content ">
+                            <div class="row popup-inner-left-padding ">
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <!--begin::Chart-->
-                        <div id="chart_2"></div>
-                        <!--end::Chart-->
-                    </div>
+                    <a class="md-close widget-map-click"><i class="fa fa-close"></i></a>
                 </div>
-                <!--end::Card-->
-            </div>
-            <div class="col-lg-12">
-                <!--begin::Card-->
-                <div class="card card-custom gutter-b">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <h3 class="card-label">
-                                Active Users by Month
-                            </h3>
-                            <input type="text" class="form-control" id="chart_users_date" style="width:100px;" readonly placeholder="Select date" value="{{date('Y-m')}}"/>
+                <div class="md-overlay content-loading"></div>
+                <div class="md-modal md-effect-map-btn" id="grid-show-popup">
+                    <div class="container">
+                        <div class="md-content ">
+                            <div class="row grid-show-popup" data-loader="/images/classic/content-loader.gif">
+                                <img src="/images/classic/content-loader.gif" />
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <!--begin::Chart-->
-                        <div id="chart_3"></div>
-                        <!--end::Chart-->
-                    </div>
+                    <a class="md-close widget-map-click"><i class="fa fa-close"></i></a>
                 </div>
-                <!--end::Card-->
+
+                <!--hidden google map-->
+                <div id="lp-hidden-map" style="width:300px;height:300px;position:absolute;left:-300000px"></div>				   
+                <div class="lp-home-banner-contianer lp-home-banner-with-loc" style="height:610px;">
+                    <div class="page-header-overlay"></div>
+                    <div class="img-curtasy">
+                        <p>Image courtesy of <span><a href=""> <i class="fa fa-angle-right"></i></a></span></p>
+                    </div>          
+                    <div class="lp-home-banner-contianer-inner ">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center lp_auto_loc_container">
+                                    <h1 data-locnmethod="withip">Busca en  <span class="lp-dyn-city">Your City</span></h1>
+                                    <p class="lp-banner-browse-txt">Encuentra todos tus mas grandes placeres</p>
+                                </div>
+                                <div class="col-md-8 col-xs-12 col-md-offset-2 col-sm-offset-0">
+                                    <div class="lp-search-bar clearfix">
+                                        @include('frontend.layouts.searchfrm')                   
+                                    </div>				
+                                    <div class="text-center lp-search-description">
+                                        <p>Solo estas viendo? Déjanos sugerirte lo mas &quot;hot&quot; del momento!</p>		
+                                        <img src="/images/classic/banner-arrow.png" alt="banner-arrow" class="banner-arrow">		 				 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>		   			
+                </div><!-- ../Home Search Container -->
             </div>
         </div>
-        <!--end::Dashboard-->
+        <div class="home-categories-area banner-view-classic new-banner-view-category-st">
+            <div class="lp-section-row margin-bottom-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="lp-home-categoires padding-left-0 banner-default-view-category3">
+                                <li><a href="/listing-category/hoteles/" class="lp-border-radius-5"><span>Hoteles</span></a></li>
+                                <li><a href="/listing-category/masajes/" class="lp-border-radius-5"><span>Masajes</span></a></li>
+                                <li><a href="/listing-category/escorts/mujeres/" class="lp-border-radius-5"><span>Mujeres</span></a></li>
+                                <li><a href="/listing-category/sex-shop/" class="lp-border-radius-5"><span>Sex Shops</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div  id="lp_60c3da7b5a1be" class="lp-section-row   ">
+                <div class="lp_section_inner  clearfix "  style="background-repeat: no-repeat;">
+                    <div class="clearfix container">
+                        <div class="row lp-section-content clearfix">
+                            <div class="lp-section-title-container text-center ">
+                                <h2 style="color:"> Populares</h2>
+                                <div style="color:" class="lp-sub-title">Lo mas visitado del momento</div>
+                            </div>
+                            <div class="padding-top-40 padding-bottom-40 clearfix">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner">
+                                        <div class="wpb_wrapper">
+                                            <div class="listing-simple listing_grid_view listingcampaings">
+                                                <div class="lp-list-page-grid row" id="content-grids" >
+                                                    <div class="md-overlay"></div>
+                                                </div>
+                                            </div>							
+                                            <div class="col-md-4 col-sm-6 promoted lp-grid-box-contianer grid_view6 grid_view_s5 card1 lp-grid-box-contianer1 listing-grid-view2-outer" data-title="Esmeralda &#8211; Fitness" data-postid="184"   data-lattitue="25.6929895" data-longitute="-100.1712571" data-posturl="/listing/esmeralda-escort-de-lujo-fitness/">
+                                                <div class="lp-grid-box">
+                                                    <div class="lp-grid-box-thumb-container" >
+                                                        <div class="hide">
+                                                            <span class="gaddress">Carr. Libre Monterrey - Reynosa 1340, Valle Soleado, 67114 Guadalupe, N.L.</span>
+                                                        </div>
+                                                        <div class="lp-grid-box-thumb">
+                                                            <div class="show-img">
+                                                                <a href='listing/esmeralda-escort-de-lujo-fitness/' >
+                                                                    <img src='/images/custom/a2.jpg' />
+                                                                </a>									
+                                                            </div>
+                                                            <div class="hide-img listingpro-list-thumb">
+                                                                <a href='/listing/esmeralda-escort-de-lujo-fitness/' >
+                                                                    <img src='/images/custom/a2.jpg' />
+                                                                </a>					
+                                                            </div>
+                                                            <div class="lp-grid6-status">
+                                                                <a class="status-btn"><span class="grid-closed status-red li-listing-clock-outer">Cerrado!</span> 
+                                                                </a>
+                                                            </div>	
+                                                        </div>
+                                                        <div class="lp-grid-box-quick">
+                                                            <ul class="lp-post-quick-links clearfix">
+                                                                <li class="pull-left">
+                                                                    <a href="#" data-post-type="grids" data-post-id="184" data-success-text="Guardado" class="status-btn add-to-fav lp-add-to-fav">
+                                                                        <i class="fa fa-bookmark-o"></i> <span>Guardar</span>
+                                                                    </a>
+                                                                </li>                                                            
+                                                            </ul>
+                                                        </div>
+                                                        <div class="lp-grid6-top-container">
+                                                            <div class="lp-grid6-top-container-inner">
+                                                                <div class="post-row price-range">
+                                                                    <ul class="list-style-none post-price-row line-height-16">
+                                                                        <li>
+                                                                            <span class="post-rice">
+                                                                                <span class="text">Price Range</span>
+                                                                                1500
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <h4 class="lp-h4">
+                                                                    <a href="/listing/esmeralda-escort-de-lujo-fitness/">
+                                                                        <span class="listing-pro">Ad</span>Esmeralda &#8211; Fi..
+                                                                        <span class="verified simptip-position-top simptip-movable" data-tooltip="Claimed"><i class="fa fa-check"></i> </span>											
+                                                                    </a>
+                                                                </h4>	
+                                                                <div class="lp-listing-cats">			
+                                                                    <a href="/list-tags/escort/">
+                                                                        escort,
+                                                                    </a>																																								
+                                                                    <a href="/list-tags/esmeralda/">
+                                                                        esmeralda,
+                                                                    </a>                                                                                                        
+                                                                    <a href="/list-tags/fitness/">
+                                                                        fitness,
+                                                                    </a>
+                                                                </div>
+                                                                <div class="lp-listing-logo-outer">                                                                
+                                                                    <div class="lp-listing-logo">
+                                                                        <img src="/images/custom/u1.png" alt="Listing Logo">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix">
+                                                                <div class="pull-left lp-grid6-cate">											
+                                                                    <a href="/listing-category/escorts/">
+                                                                        Escorts
+                                                                    </a>			
+                                                                </div>
+                                                                <div class="lp-grid-box-bottom-grid6">
+                                                                    <div class="pull-right">
+                                                                        <div class="show">
+                                                                            <span class="cat-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                                                            <a href="/monterrey/">
+                                                                                Monterrey
+                                                                            </a>			
+                                                                        </div>                                                                    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lp-new-grid-bottom-button">
+                                                        <ul class="clearfix">
+                                                            <li style="">
+                                                                <a href="" data-lid="184" data-lat="25.6929895" data-lng="-100.1712571" class="show-loop-map-popup"><i class="fa fa-map-pin" aria-hidden="true"></i> Direction</a>
+                                                            </li>
+                                                            <li class="show-number-wrap" onclick="myFuction(this)" style="">
+                                                                <p><i class="fa fa-phone" aria-hidden="true"></i> <span class="show-number">call Now</span><a href="tel:(81) 2310-0096" class="grind-number">(81) 2310-0096</a></p>
+                                                            </li>                                                                                                    
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>						
+                                            <div class="col-md-4 col-sm-6 promoted lp-grid-box-contianer grid_view6 grid_view_s5 card1 lp-grid-box-contianer1 listing-grid-view2-outer" data-title="Kira Kattan" data-postid="190"   data-lattitue="25.6929895" data-longitute="-100.1712571" data-posturl="/listing/kira-kattan/">
+                                                <div class="lp-grid-box">
+                                                    <div class="lp-grid-box-thumb-container" >
+                                                        <div class="hide">
+                                                            <span class="gaddress">Carr. Libre Monterrey - Reynosa 1340, Valle Soleado, 67114 Guadalupe, N.L.</span>
+                                                        </div>
+                                                        <div class="lp-grid-box-thumb">
+                                                            <div class="show-img">
+                                                                <a href='/listing/kira-kattan/' >
+                                                                    <img src='/images/custom/a1.jpg' />
+                                                                </a>	
+                                                            </div>
+                                                            <div class="hide-img listingpro-list-thumb">
+                                                                <a href='/listing/kira-kattan/' >
+                                                                    <img src='/images/custom/a2.jpg' />
+                                                                </a>
+                                                            </div>									
+                                                            <div class="lp-grid6-status">
+                                                                <a class="status-btn"><span class="grid-closed status-red li-listing-clock-outer">Cerrado!</span> 
+                                                                </a>
+                                                            </div>										
+                                                        </div>
+                                                        <div class="lp-grid-box-quick">
+                                                            <ul class="lp-post-quick-links clearfix">
+                                                                <li class="pull-left">
+                                                                    <a href="#" data-post-type="grids" data-post-id="190" data-success-text="Guardado" class="status-btn add-to-fav lp-add-to-fav">
+                                                                        <i class="fa fa-bookmark-o"></i> <span>Guardar</span>
+                                                                    </a>
+                                                                </li>                                                            
+                                                            </ul>
+                                                        </div>
+                                                        <div class="lp-grid6-top-container">
+                                                            <div class="lp-grid6-top-container-inner">
+                                                                <div class="post-row price-range">
+                                                                    <ul class="list-style-none post-price-row line-height-16">
+                                                                        <li>
+                                                                            <span class="post-rice">
+                                                                                <span class="text">Price Range</span>
+                                                                                2800
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <h4 class="lp-h4">
+                                                                    <a href="/listing/kira-kattan/">
+                                                                        <span class="listing-pro">Ad</span>Kira Kattan..
+                                                                    </a>
+                                                                </h4>	
+                                                                <div class="lp-listing-cats">																								
+                                                                    <a href="/listing/kira/">
+                                                                        Kira,
+                                                                    </a>                                                                                                                                                                            
+                                                                    <a href="/listing/masajes/">
+                                                                        masajes,
+                                                                    </a>                                                                                                                                                                            
+                                                                    <a href="/listing/vip/">
+                                                                        vip
+                                                                    </a>
+                                                                </div>
+                                                                <div class="lp-listing-logo-outer">
+                                                                    <div class="lp-listing-logo">
+                                                                        <img src="/images/custom/u2.png" alt="Listing Logo">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix">
+                                                                <div class="pull-left lp-grid6-cate">											
+                                                                    <a href="/listing-category/escorts/">
+                                                                        Escorts
+                                                                    </a>
+                                                                </div>
+                                                                <div class="lp-grid-box-bottom-grid6">
+                                                                    <div class="pull-right">
+                                                                        <div class="show">
+                                                                            <span class="cat-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                                                            <a href="/location/monterrey/">
+                                                                                Monterrey
+                                                                            </a>
+                                                                        </div>													
+                                                                    </div>
+                                                                </div>			
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lp-new-grid-bottom-button">
+                                                        <ul class="clearfix">
+                                                            <li style="">
+                                                                <a href="" data-lid="190" data-lat="25.6929895" data-lng="-100.1712571" class="show-loop-map-popup"><i class="fa fa-map-pin" aria-hidden="true"></i> Direction</a>
+                                                            </li>
+                                                            <li class="show-number-wrap" onclick="myFuction(this)" style="">
+                                                                <p><i class="fa fa-phone" aria-hidden="true"></i> <span class="show-number">call Now</span><a href="tel:(81) 3410-7030" class="grind-number">(81) 3410-7030</a></p>
+                                                            </li>																						
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>		 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="lp_60c3da7b5e081" class="lp-section-row ">
+                <div class="lp_section_inner  clearfix "  style="background-color: #eff3f6;background-repeat: no-repeat;">
+                    <div class="clearfix container">
+                        <div class="row lp-section-content clearfix">
+                            <div class="lp-section-title-container text-center ">
+                                <h2 style="color:"> Suscríbete y empieza a ganar hoy</h2>
+                                <div style="color:" class="lp-sub-title">Cerca del 80% de los clientes utiliza este tipo de buscadores para encontrar servicios</div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="promotional-element listingpro-columns">
+                                            <div class="listingpro-row padding-top-60 padding-bottom-60">
+                                                <div class="promotiona-col-left">
+                                                    <img src="/images/custom/columns.png" alt="">
+                                                </div>
+                                                <div class="promotiona-col-right">
+                                                    <article>
+                                                        <h3>1- Reclama tu insignia</h3>
+                                                        <p>La mejor manera de empezar a ganar es reclamando tu insignia, ya que esto da mucha seguridad a los clientes.</p>
+                                                    </article>
+                                                    <article>
+                                                        <h3>2- Promociona tu anuncio</h3>
+                                                        <p>Promociona tus servicios dirigiéndote a los clientes que necesitan sus servicios o productos.</p>
+                                                    </article>
+                                                    <article>
+                                                        <h3>3- Convierte tus visitas en dinero</h3>
+                                                        <p>Convierte tus visitas en clientes regulares, que pagan por tus servicios.</p>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="lp_60c3da7b5e619" class="lp-section-row">
+                <div class="lp_section_inner  clearfix container"  style="background-repeat: no-repeat;">
+                    <div class="clearfix ">
+                        <div class="row lp-section-content clearfix">
+                            <div class="lp-section-title-container text-center ">
+                                <h2 style="color:"> Nuestro Blog</h2>
+                                <div style="color:" class="lp-sub-title">Checa lo más ardiente del momento</div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="lp-section-content-container lp-blog-grid-container row">
+                                            <div class="col-md-4 col-sm-4 lp-blog-grid-box">
+                                                <div class="lp-blog-grid-box-container lp-border lp-border-radius-8">
+                                                    <div class="lp-blog-grid-box-thumb">
+                                                        <a href="/millennials-y-puteros-por-que-los-clientes-de-la-prostitucion-son-cada-vez-mas-jovenes/">
+                                                            <img src="/images/custom/b1.jpg" alt="blog-grid-1-410x308" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="lp-blog-grid-box-description text-center">
+                                                        <div class="lp-blog-user-thumb margin-top-subtract-25">
+                                                            <img class="avatar" src="http://1.gravatar.com/avatar/71dc3ffe3416a9f7cfbc17ae40e4ed5a?s=51&#038;d=mm&#038;r=g" alt="">
+                                                        </div>
+                                                        <div class="lp-blog-grid-category">
+                                                            <a href="/category/escorts/" >Escorts</a>
+                                                        </div>
+                                                        <div class="lp-blog-grid-title">
+                                                            <h4 class="lp-h4">
+                                                                <a href="/millennials-y-puteros-por-que-los-clientes-de-la-prostitucion-son-cada-vez-mas-jovenes/">&#8216;Millennials&#8217; y puteros: por qué los clientes de la prostitución son cada vez más jóvenes</a>
+                                                            </h4>
+                                                        </div>
+                                                        <ul class="lp-blog-grid-author">
+                                                            <li>
+                                                                <a href="/author/rexpirate/">
+                                                                    <i class="fa fa-user"></i>
+                                                                    <span>rexpirate</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <i class="fa fa-calendar"></i>
+                                                                <span>enero 23, 2021</span>
+                                                            </li>
+                                                        </ul><!-- ../lp-blog-grid-author -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 lp-blog-grid-box">
+                                                <div class="lp-blog-grid-box-container lp-border lp-border-radius-8">
+                                                    <div class="lp-blog-grid-box-thumb">
+                                                        <a href="/hello-world/">
+                                                            <img src="/images/custom/b2.jpeg" alt="blog-grid-1-410x308" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="lp-blog-grid-box-description text-center">
+                                                        <div class="lp-blog-user-thumb margin-top-subtract-25">
+                                                            <img class="avatar" src="http://1.gravatar.com/avatar/71dc3ffe3416a9f7cfbc17ae40e4ed5a?s=51&#038;d=mm&#038;r=g" alt="">
+                                                        </div>
+                                                        <div class="lp-blog-grid-category">
+                                                            <a href="/category/uncategorized/" >Uncategorized</a>
+                                                        </div>
+                                                        <div class="lp-blog-grid-title">
+                                                            <h4 class="lp-h4">
+                                                                <a href="/hello-world/">Hello world!</a>
+                                                            </h4>
+                                                        </div>
+                                                        <ul class="lp-blog-grid-author">
+                                                            <li>
+                                                                <a href="/author/rexpirate/">
+                                                                    <i class="fa fa-user"></i>
+                                                                    <span>rexpirate</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <i class="fa fa-calendar"></i>
+                                                                <span>enero 17, 2021</span>
+                                                            </li>
+                                                        </ul><!-- ../lp-blog-grid-author -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 lp-blog-grid-box">
+                                                <div class="lp-blog-grid-box-container lp-border lp-border-radius-8">
+                                                    <div class="lp-blog-grid-box-thumb">
+                                                        <a href="/excited-news-about-arrival-fashion/">
+                                                            <img src="/images/custom/b3.jpeg" alt="blog-grid-1-410x308" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="lp-blog-grid-box-description text-center">
+                                                        <div class="lp-blog-user-thumb margin-top-subtract-25">
+                                                            <img class="avatar" src="http://1.gravatar.com/avatar/71dc3ffe3416a9f7cfbc17ae40e4ed5a?s=51&#038;d=mm&#038;r=g" alt="">
+                                                        </div>
+                                                        <div class="lp-blog-grid-category">
+                                                            <a href="/category/news/" >News</a>, <a href="/category/uncategorized/" >Uncategorized</a>
+                                                        </div>
+                                                        <div class="lp-blog-grid-title">
+                                                            <h4 class="lp-h4">
+                                                                <a href="/excited-news-about-arrival-fashion/">Excited news about arrival fashion.</a>
+                                                            </h4>
+                                                        </div>
+                                                        <ul class="lp-blog-grid-author">
+                                                            <li>
+                                                                <a href="/author/rexpirate/">
+                                                                    <i class="fa fa-user"></i>
+                                                                    <span>rexpirate</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <i class="fa fa-calendar"></i>
+                                                                <span>enero 1, 2020</span>
+                                                            </li>
+                                                        </ul><!-- ../lp-blog-grid-author -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @include('frontend.layouts.footer')
     </div>
-    <!--end::Container-->
-</div>
-<!--end::Entry-->
-
-<script type="text/javascript" src="frontend/js/home.js"></script>
+</body>
+<script type="text/javascript" src="frontend/js/pages/home.js"></script>
+<script type='text/javascript' src='/frontend/js/js_composer_front.min.js' id='wpb_composer_front_js-js'></script>
 @endsection
