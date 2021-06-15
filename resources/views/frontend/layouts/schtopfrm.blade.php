@@ -19,8 +19,8 @@
 	<div class="input-group width-49-percent ">
 		<div class="input-group-addon lp-border">Donde</div>
 		<div class="ui-widget border-dropdown">
-		<input autocomplete="off" id="cities" class="form-control" data-country="" value="ssss" placeholder="Tu ciudad...">
-			<input type="hidden" autocomplete="off" id="lp_search_loc" name="lp_s_loc" value="ssss">
+			<input autocomplete="off" id="cities" class="form-control" data-country="" value="" placeholder="Tu ciudad...">
+			<input type="hidden" autocomplete="off" id="lp_search_loc" name="lp_s_loc" value="">
 		</div>
 	</div>
 	<div class="lp-search-btn-header pos-relative">

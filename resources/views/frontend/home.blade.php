@@ -10,7 +10,7 @@
                 <header class="header-without-topbar header-normal pos-relative lp-header-full-width">
                     <div class="lp-header-overlay"></div>
                     <div id="menu" class="small-screen">
-                        <a href="/submit-listing/" class="lpl-button lpl-add-listing-loggedout">Anunciate</a>
+                        <a href="/{{Auth::id()?'ads':'guide'}}" class="lpl-button lpl-add-listing-loggedout">Anunciate</a>
                         <a class="lpl-button lp-right-15 app-view-popup-style" data-target="#app-view-login-popup">Sign In</a>
                     </div>
                     <div class="lp-menu-bar header-bg-color-class">
@@ -44,7 +44,7 @@
                                             <div class="pull-right lp-add-listing-btn">
                                                 <ul>
                                                     <li>
-                                                        <a href="/submit-listing/">
+                                                        <a href='/{{Auth::id()?"ads":"guide"}}'>
                                                             <i class="fa fa-plus"></i>
                                                             Anunciate
                                                         </a>                                                    
@@ -62,97 +62,7 @@
                     </div><!-- ../menu-bar -->
                 </header>
                 <!--==================================Header Close=================================--><!-- Login Popup style2 -->
-                <div class="modal fade style2-popup-login" id="app-view-login-popup" role="dialog" style="overflow: visible !important; opacity: 1;">
-                    <div class="modal-dialog">                                                        
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="login-form-pop-tabs clearfix">
-                                    <ul>
-                                        <li><a href="#" class="signInClick active">Sign In</a></li>
-                                        <li><a href="#" class="signUpClick">Sign Up</a></li>                                                                    
-                                    </ul>
-                                    <a class="md-close" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i></a>                                                                    
-                                </div>                                                                
-                            </div>
-                            <div class="modal-body">                                                                
-                                <div class="lp-border-radius-8 login-form-popup-outer">
-                                    <div class="siginincontainer2">
-                                        <form id="login" class="form-horizontal margin-top-30"  method="post" data-lp-recaptcha="" data-lp-recaptcha-sitekey="">
-                                            <p class="status"></p>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="lpusername" name="lpusername" placeholder="UserName/Email"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" id="lppassword" name="lppassword" placeholder="Password"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="checkbox clearfix">
-                                                    <input id="check1" type="checkbox" name="remember" value="yes">
-                                                
-                                                    <a class="forgetPasswordClick pull-right" >Forgot Password</a>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="submit" value="Sign in" class="lp-secondary-btn width-full btn-first-hover" />
-                                            </div>
-                                            <input type="hidden" id="security" name="security" value="b387a31ac2" /><input type="hidden" name="_wp_http_referer" value="/" />							
-                                        </form>
-                                    </div>
-                                    <div class="siginupcontainer2">
-                                        <form id="register" class="form-horizontal margin-top-30"  method="post" data-lp-recaptcha="" data-lp-recaptcha-sitekey="">
-                                            <p class="note">nota: tener estos datos verificados no significa que tenga una cuenta, hasta que publique un anuncio no se le asignará un nombre de usuario y contraseña</p>
-                                            <p class="status"></p>
-                                            <div class="form-group">
-                                                <lavel>país</lavel>								   
-                                                <select class="form-control" id="national">
-                                                    <option value="1">Columbia</option>
-                                                    <option value="2">México</option>
-                                                    <option value="3">Brasil</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">	
-                                                <lavel>Teléfono (10 dígitos)</lavel>								   
-                                                <input type="text" class="form-control" id="telephone" name="telephone"  placeholder="Número de teléfono"/>
-                                            </div>
-                                            <div class="form-group">							
-                                                <lavel>Correo electronico</lavel>					
-                                                <input type="email" class="form-control" id="email" name="email" placeholder="Correo electronico"/>
-                                            </div>
-                                            <div class="form-group">	
-                                                <input type="checkbox" class="form-control" id="smsallow" name="smsallow""/>
-                                                <div class="inline-lavel">
-                                                    <lavel>Acepto recibir comunicaciones por SMS.</lavel>								   									
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <input id="lp_usr_reg_btn" type="submit" value="Siguente paso" class="lp-secondary-btn width-full btn-first-hover" />
-                                            </div>
-                                            <input type="hidden" id="security2" name="security2" value="11ae3f07df" /><input type="hidden" name="_wp_http_referer" value="/" />							
-                                        </form>
-                                    </div>
-                                    <div class="forgetpasswordcontainer2">
-                                        <form class="form-horizontal margin-top-30" id="lp_forget_pass_form" action="#"  method="post">
-                                            <p class="status"></p>
-                                            <div class="form-group">
-                                                <input type="email" name="user_login" class="form-control" id="email3" placeholder="Email"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="submit" name="submit" value="Get New Password" class="lp-secondary-btn width-full btn-first-hover" />
-                                                <input type="hidden" id="security3" name="security3" value="28763ecba2" /><input type="hidden" name="_wp_http_referer" value="/" />								</div>
-                                        </form>
-                                        <div class="pop-form-bottom">
-                                            <div class="bottom-links">
-                                                <a class="cancelClick" >Cancel</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Login Popup -->								
+                @include('frontend.layouts.login')  							
                 <div class="app-view-popup-style" data-target="#app-view-login-popup">
                     <!--ajax based content-->
                 </div>
@@ -190,7 +100,9 @@
                 <div class="lp-home-banner-contianer lp-home-banner-with-loc" style="height:610px;">
                     <div class="page-header-overlay"></div>
                     <div class="img-curtasy">
-                        <p>Image courtesy of <span><a href=""> <i class="fa fa-angle-right"></i></a></span></p>
+                        <p>Image courtesy of <span>
+                            <a href=""> <i class="fa fa-angle-right"></i></a></span>
+                        </p>
                     </div>          
                     <div class="lp-home-banner-contianer-inner ">
                         <div class="container">
@@ -220,10 +132,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <ul class="lp-home-categoires padding-left-0 banner-default-view-category3">
-                                <li><a href="/listing-category/hoteles/" class="lp-border-radius-5"><span>Hoteles</span></a></li>
-                                <li><a href="/listing-category/masajes/" class="lp-border-radius-5"><span>Masajes</span></a></li>
-                                <li><a href="/listing-category/escorts/mujeres/" class="lp-border-radius-5"><span>Mujeres</span></a></li>
-                                <li><a href="/listing-category/sex-shop/" class="lp-border-radius-5"><span>Sex Shops</span></a></li>
+                                @for($i=0;$i<4;$i++)
+                                <li><a href="/listing?select={{$categories[$i]['name']}}" class="lp-border-radius-5"><span>{{$categories[$i]['name']}}</span></a></li>
+                                @endfor
                             </ul>
                         </div>
                     </div>
@@ -256,12 +167,12 @@
                                                         </div>
                                                         <div class="lp-grid-box-thumb">
                                                             <div class="show-img">
-                                                                <a href='listing/esmeralda-escort-de-lujo-fitness/' >
+                                                                <a href='listing/' >
                                                                     <img src='/images/custom/a2.jpg' />
                                                                 </a>									
                                                             </div>
                                                             <div class="hide-img listingpro-list-thumb">
-                                                                <a href='/listing/esmeralda-escort-de-lujo-fitness/' >
+                                                                <a href='/listing/' >
                                                                     <img src='/images/custom/a2.jpg' />
                                                                 </a>					
                                                             </div>
@@ -292,19 +203,19 @@
                                                                     </ul>
                                                                 </div>
                                                                 <h4 class="lp-h4">
-                                                                    <a href="/listing/esmeralda-escort-de-lujo-fitness/">
+                                                                    <a href="/listing/">
                                                                         <span class="listing-pro">Ad</span>Esmeralda &#8211; Fi..
                                                                         <span class="verified simptip-position-top simptip-movable" data-tooltip="Claimed"><i class="fa fa-check"></i> </span>											
                                                                     </a>
                                                                 </h4>	
                                                                 <div class="lp-listing-cats">			
-                                                                    <a href="/list-tags/escort/">
+                                                                    <a href="/listing">
                                                                         escort,
                                                                     </a>																																								
-                                                                    <a href="/list-tags/esmeralda/">
+                                                                    <a href="/listing">
                                                                         esmeralda,
                                                                     </a>                                                                                                        
-                                                                    <a href="/list-tags/fitness/">
+                                                                    <a href="/listing">
                                                                         fitness,
                                                                     </a>
                                                                 </div>
@@ -316,7 +227,7 @@
                                                             </div>
                                                             <div class="clearfix">
                                                                 <div class="pull-left lp-grid6-cate">											
-                                                                    <a href="/listing-category/escorts/">
+                                                                    <a href="/listing">
                                                                         Escorts
                                                                     </a>			
                                                                 </div>
@@ -324,7 +235,7 @@
                                                                     <div class="pull-right">
                                                                         <div class="show">
                                                                             <span class="cat-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                                                                            <a href="/monterrey/">
+                                                                            <a href="/listing">
                                                                                 Monterrey
                                                                             </a>			
                                                                         </div>                                                                    
@@ -336,7 +247,7 @@
                                                     <div class="lp-new-grid-bottom-button">
                                                         <ul class="clearfix">
                                                             <li style="">
-                                                                <a href="" data-lid="184" data-lat="25.6929895" data-lng="-100.1712571" class="show-loop-map-popup"><i class="fa fa-map-pin" aria-hidden="true"></i> Direction</a>
+                                                                <a href="#" data-lid="184" data-lat="25.6929895" data-lng="-100.1712571" class="show-loop-map-popup"><i class="fa fa-map-pin" aria-hidden="true"></i> Direction</a>
                                                             </li>
                                                             <li class="show-number-wrap" onclick="myFuction(this)" style="">
                                                                 <p><i class="fa fa-phone" aria-hidden="true"></i> <span class="show-number">call Now</span><a href="tel:(81) 2310-0096" class="grind-number">(81) 2310-0096</a></p>
@@ -353,12 +264,12 @@
                                                         </div>
                                                         <div class="lp-grid-box-thumb">
                                                             <div class="show-img">
-                                                                <a href='/listing/kira-kattan/' >
+                                                                <a href='/listing' >
                                                                     <img src='/images/custom/a1.jpg' />
                                                                 </a>	
                                                             </div>
                                                             <div class="hide-img listingpro-list-thumb">
-                                                                <a href='/listing/kira-kattan/' >
+                                                                <a href='/listing' >
                                                                     <img src='/images/custom/a2.jpg' />
                                                                 </a>
                                                             </div>									
@@ -389,18 +300,18 @@
                                                                     </ul>
                                                                 </div>
                                                                 <h4 class="lp-h4">
-                                                                    <a href="/listing/kira-kattan/">
+                                                                    <a href="/listing">
                                                                         <span class="listing-pro">Ad</span>Kira Kattan..
                                                                     </a>
                                                                 </h4>	
                                                                 <div class="lp-listing-cats">																								
-                                                                    <a href="/listing/kira/">
+                                                                    <a href="/listing">
                                                                         Kira,
                                                                     </a>                                                                                                                                                                            
-                                                                    <a href="/listing/masajes/">
+                                                                    <a href="/listing">
                                                                         masajes,
                                                                     </a>                                                                                                                                                                            
-                                                                    <a href="/listing/vip/">
+                                                                    <a href="/listing">
                                                                         vip
                                                                     </a>
                                                                 </div>
@@ -412,7 +323,7 @@
                                                             </div>
                                                             <div class="clearfix">
                                                                 <div class="pull-left lp-grid6-cate">											
-                                                                    <a href="/listing-category/escorts/">
+                                                                    <a href="/listing">
                                                                         Escorts
                                                                     </a>
                                                                 </div>
@@ -420,7 +331,7 @@
                                                                     <div class="pull-right">
                                                                         <div class="show">
                                                                             <span class="cat-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                                                                            <a href="/location/monterrey/">
+                                                                            <a href="/listing">
                                                                                 Monterrey
                                                                             </a>
                                                                         </div>													
@@ -432,7 +343,7 @@
                                                     <div class="lp-new-grid-bottom-button">
                                                         <ul class="clearfix">
                                                             <li style="">
-                                                                <a href="" data-lid="190" data-lat="25.6929895" data-lng="-100.1712571" class="show-loop-map-popup"><i class="fa fa-map-pin" aria-hidden="true"></i> Direction</a>
+                                                                <a href="#" data-lid="190" data-lat="25.6929895" data-lng="-100.1712571" class="show-loop-map-popup"><i class="fa fa-map-pin" aria-hidden="true"></i> Direction</a>
                                                             </li>
                                                             <li class="show-number-wrap" onclick="myFuction(this)" style="">
                                                                 <p><i class="fa fa-phone" aria-hidden="true"></i> <span class="show-number">call Now</span><a href="tel:(81) 3410-7030" class="grind-number">(81) 3410-7030</a></p>
@@ -503,7 +414,7 @@
                                             <div class="col-md-4 col-sm-4 lp-blog-grid-box">
                                                 <div class="lp-blog-grid-box-container lp-border lp-border-radius-8">
                                                     <div class="lp-blog-grid-box-thumb">
-                                                        <a href="/millennials-y-puteros-por-que-los-clientes-de-la-prostitucion-son-cada-vez-mas-jovenes/">
+                                                        <a href="/">
                                                             <img src="/images/custom/b1.jpg" alt="blog-grid-1-410x308" />
                                                         </a>
                                                     </div>
@@ -512,16 +423,16 @@
                                                             <img class="avatar" src="http://1.gravatar.com/avatar/71dc3ffe3416a9f7cfbc17ae40e4ed5a?s=51&#038;d=mm&#038;r=g" alt="">
                                                         </div>
                                                         <div class="lp-blog-grid-category">
-                                                            <a href="/category/escorts/" >Escorts</a>
+                                                            <a href="/" >Escorts</a>
                                                         </div>
                                                         <div class="lp-blog-grid-title">
                                                             <h4 class="lp-h4">
-                                                                <a href="/millennials-y-puteros-por-que-los-clientes-de-la-prostitucion-son-cada-vez-mas-jovenes/">&#8216;Millennials&#8217; y puteros: por qué los clientes de la prostitución son cada vez más jóvenes</a>
+                                                                <a href="/">&#8216;Millennials&#8217; y puteros: por qué los clientes de la prostitución son cada vez más jóvenes</a>
                                                             </h4>
                                                         </div>
                                                         <ul class="lp-blog-grid-author">
                                                             <li>
-                                                                <a href="/author/rexpirate/">
+                                                                <a href="/">
                                                                     <i class="fa fa-user"></i>
                                                                     <span>rexpirate</span>
                                                                 </a>
@@ -537,7 +448,7 @@
                                             <div class="col-md-4 col-sm-4 lp-blog-grid-box">
                                                 <div class="lp-blog-grid-box-container lp-border lp-border-radius-8">
                                                     <div class="lp-blog-grid-box-thumb">
-                                                        <a href="/hello-world/">
+                                                        <a href="/">
                                                             <img src="/images/custom/b2.jpeg" alt="blog-grid-1-410x308" />
                                                         </a>
                                                     </div>
@@ -546,16 +457,16 @@
                                                             <img class="avatar" src="http://1.gravatar.com/avatar/71dc3ffe3416a9f7cfbc17ae40e4ed5a?s=51&#038;d=mm&#038;r=g" alt="">
                                                         </div>
                                                         <div class="lp-blog-grid-category">
-                                                            <a href="/category/uncategorized/" >Uncategorized</a>
+                                                            <a href="/" >Uncategorized</a>
                                                         </div>
                                                         <div class="lp-blog-grid-title">
                                                             <h4 class="lp-h4">
-                                                                <a href="/hello-world/">Hello world!</a>
+                                                                <a href="/">Hello world!</a>
                                                             </h4>
                                                         </div>
                                                         <ul class="lp-blog-grid-author">
                                                             <li>
-                                                                <a href="/author/rexpirate/">
+                                                                <a href="/">
                                                                     <i class="fa fa-user"></i>
                                                                     <span>rexpirate</span>
                                                                 </a>
@@ -571,7 +482,7 @@
                                             <div class="col-md-4 col-sm-4 lp-blog-grid-box">
                                                 <div class="lp-blog-grid-box-container lp-border lp-border-radius-8">
                                                     <div class="lp-blog-grid-box-thumb">
-                                                        <a href="/excited-news-about-arrival-fashion/">
+                                                        <a href="/">
                                                             <img src="/images/custom/b3.jpeg" alt="blog-grid-1-410x308" />
                                                         </a>
                                                     </div>
@@ -580,16 +491,16 @@
                                                             <img class="avatar" src="http://1.gravatar.com/avatar/71dc3ffe3416a9f7cfbc17ae40e4ed5a?s=51&#038;d=mm&#038;r=g" alt="">
                                                         </div>
                                                         <div class="lp-blog-grid-category">
-                                                            <a href="/category/news/" >News</a>, <a href="/category/uncategorized/" >Uncategorized</a>
+                                                            <a href="/" >News</a>, <a href="/" >Uncategorized</a>
                                                         </div>
                                                         <div class="lp-blog-grid-title">
                                                             <h4 class="lp-h4">
-                                                                <a href="/excited-news-about-arrival-fashion/">Excited news about arrival fashion.</a>
+                                                                <a href="/">Excited news about arrival fashion.</a>
                                                             </h4>
                                                         </div>
                                                         <ul class="lp-blog-grid-author">
                                                             <li>
-                                                                <a href="/author/rexpirate/">
+                                                                <a href="/">
                                                                     <i class="fa fa-user"></i>
                                                                     <span>rexpirate</span>
                                                                 </a>

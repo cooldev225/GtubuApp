@@ -1,4 +1,3 @@
-/* js for search by zaheer */
 jQuery(document).ready(function($) {
     if(jQuery('ul.list-st-img li').hasClass('lp-listing-phone')){
         var $country = '';
@@ -35,7 +34,9 @@ jQuery(document).ready(function($) {
             });
         });
     }
-    jQuery('.search-filter a').on('click',function(){ jQuery('select#searchcategory').trigger('change')});
+    jQuery('.search-filter a').on('click',function(){ 
+        jQuery('select#searchcategory').trigger('change');
+    });
     /* on 11th may */
     if( (jQuery('ul.list-st-img li').hasClass('lp-user-web') || (jQuery('.widget-social-icons li').hasClass('lp-user-web') ) ) ){
         var $country = '';
@@ -75,7 +76,6 @@ jQuery(document).ready(function($) {
     /* end on 11th may */
     
     jQuery('input.lp-search-btn, .lp-search-bar-right .lp-search-icon').on('click', function(e){
-
         if( jQuery('.lp-left-filter').length!= 0 )
         {
             var parentWrap  =   jQuery(this).closest('.lp-search-btn-header');
@@ -97,26 +97,23 @@ jQuery(document).ready(function($) {
         }
         else
         {
+            //when click search button
             jQuery(this).removeClass('icons8-search');
             jQuery(this).closest('form').submit();
-
-        jQuery(this).next('i').removeClass('icons8-search');
-        //jQuery(this).css('color', 'transparent');
-        jQuery(this).css('cssText', 'background-image:url() !important; color: transparent');
-        if(jQuery('img.searchloading').hasClass('loader-inner-header')){
-            jQuery('img.loader-inner-header').css({
-                'top': '15px',
-                'left': '90%',
-                'width': 'auto',
-                'height': 'auto',
-                'margin-left': '0px'
-            });
+            jQuery(this).next('i').removeClass('icons8-search');
+            //jQuery(this).css('color', 'transparent');
+            jQuery(this).css('cssText', 'background-image:url() !important; color: transparent');
+            if(jQuery('img.searchloading').hasClass('loader-inner-header')){
+                jQuery('img.loader-inner-header').css({
+                    'top': '15px',
+                    'left': '90%',
+                    'width': 'auto',
+                    'height': 'auto',
+                    'margin-left': '0px'
+                });
+            }            
+            jQuery('img.searchloading').css('display', 'block');
         }
-        
-        jQuery('img.searchloading').css('display', 'block');
-        }
-
-
     });
     
     jQuery('#skeyword-filter').keyup(function (e) {
@@ -125,9 +122,9 @@ jQuery(document).ready(function($) {
     jQuery('form i.cross-search-q').on('click', function(){
         jQuery("form i.cross-search-q").css("display","none");
         jQuery('form .lp-suggested-search').val('');
-        jQuery("img.loadinerSearch").css("display","block");
+        //jQuery("img.loadinerSearch").css("display","block");
         var qString = '';
-        
+        return;
         jQuery.ajax({
             type: 'POST',
             dataType: 'json',
@@ -272,121 +269,121 @@ jQuery(document).ready(function($) {
     var timer;
     inputField.on('keyup', function(){
         clearInterval(timer);
-         timer = setTimeout(function() {
+        timer = setTimeout(function() {
             var $this = inputField;
             var qString = $this.val();
             var count = $this.val().length;
-        lpsearchmode = jQuery('body').data('lpsearchmode');
+            lpsearchmode = jQuery('body').data('lpsearchmode');
             noresultMSG = $this.data('noresult');
-        jQuery("#input-dropdown ul").empty();
-        jQuery("#input-dropdown ul li").remove();
-        prevQuery = $this.data('prev-value');
-        $this.data( "prev-value", qString.length );
-
+            jQuery("#input-dropdown ul").empty();
+            jQuery("#input-dropdown ul li").remove();
+            prevQuery = $this.data('prev-value');
+            $this.data( "prev-value", qString.length );
+            return;
             //if(count>1){
-                    jQuery.ajax({
-                    type: "POST",
-                        dataType: 'json',
-                        url: ajax_search_term_object.ajaxurl,
-                        data: { 
-                            'action': 'listingpro_suggested_search', 
-                            'tagID': qString,
-                            'lpNonce' : jQuery('#lpNonce').val()
-                            },
-                    beforeSend: function(){
-                        jQuery("form i.cross-search-q").css("display","none");
-                        jQuery("img.loadinerSearch").css("display","block");
-                    },
-                        success: function(data){
-                        console.log(data);
-                                //console.log(data.suggestions);
-                                /* ajax response start */
-                            if(data){
-                                        resArray = [];
-                                    if(data.suggestions.tag|| data.suggestions.tagsncats || data.suggestions.cats || data.suggestions.titles){
-                                            
-                                            if(data.suggestions.tag){
-                                                    jQuery.each(data.suggestions.tag, function(i,v) {
-                                                        resArray.push(v);
-                                                    });
-                                                
-                                            }
-                                            
-                                            if(data.suggestions.tagsncats){
-                                                    jQuery.each(data.suggestions.tagsncats, function(i,v) {
-                                                        resArray.push(v);
-                                                    });
-                                            
-                                            }
-                                            
-                                                
-                                            if(data.suggestions.cats){
-                                                jQuery.each(data.suggestions.cats, function(i,v) {
-                                                        
-                                                        resArray.push(v);
-                                                    
-                                                    });
-                                                    
-                                                if(data.suggestions.tag==null && data.suggestions.tagsncats==null && data.suggestions.titles==null ){
-                                                    resArray = resArray;
-                                                }
-                                                else{
-                                                }
-                                                        
-                                                    
-                                                
-                                            }
-                                            
-                                            if(data.suggestions.titles){
-                                                jQuery.each(data.suggestions.titles, function(i,v) {        
-                                                    
-                                                        resArray.push(v);
-                                                    
-                                                });
-                                                
-                                            }
+            jQuery.ajax({
+                type: "POST",
+                    dataType: 'json',
+                    url: ajax_search_term_object.ajaxurl,
+                    data: { 
+                        'action': 'listingpro_suggested_search', 
+                        'tagID': qString,
+                        'lpNonce' : jQuery('#lpNonce').val()
+                        },
+                beforeSend: function(){
+                    jQuery("form i.cross-search-q").css("display","none");
+                    jQuery("img.loadinerSearch").css("display","block");
+                },
+                    success: function(data){
+                    console.log(data);
+                            //console.log(data.suggestions);
+                            /* ajax response start */
+                        if(data){
+                                    resArray = [];
+                                if(data.suggestions.tag|| data.suggestions.tagsncats || data.suggestions.cats || data.suggestions.titles){
                                         
-                                    }
-                                    else{
-                                            if(data.suggestions.more){
-                                                jQuery.each(data.suggestions.more, function(i,v) {
+                                        if(data.suggestions.tag){
+                                                jQuery.each(data.suggestions.tag, function(i,v) {
                                                     resArray.push(v);
                                                 });
                                             
                                         }
-                                    }
-                                    
-                                    prevQString = data.tagID;
-                                    
-                                    jQuery('img.loadinerSearch').css('display','none');
-                                    if(jQuery('form #select').val() == ''){
-                                        jQuery("form i.cross-search-q").css("display","none");
-                                    }
-                                    else{
-                                        jQuery("form i.cross-search-q").css("display","block");
-                                    }
-                                    
-                                        //jQuery.each( resArray, function( key, value ) {
-
-                                        myDropDown.css('display', 'none');
-                                        jQuery("#input-dropdown ul").empty();
                                         
-                                            jQuery("#input-dropdown ul").append(resArray);
-                                        myDropDown.css('display', 'block');
-                                        $this.data( "prev-value", qString.length );
-                                        //});
-
-
+                                        if(data.suggestions.tagsncats){
+                                                jQuery.each(data.suggestions.tagsncats, function(i,v) {
+                                                    resArray.push(v);
+                                                });
+                                        
+                                        }
+                                        
+                                            
+                                        if(data.suggestions.cats){
+                                            jQuery.each(data.suggestions.cats, function(i,v) {
+                                                    
+                                                    resArray.push(v);
+                                                
+                                                });
+                                                
+                                            if(data.suggestions.tag==null && data.suggestions.tagsncats==null && data.suggestions.titles==null ){
+                                                resArray = resArray;
+                                            }
+                                            else{
+                                            }
+                                                    
+                                                
+                                            
+                                        }
+                                        
+                                        if(data.suggestions.titles){
+                                            jQuery.each(data.suggestions.titles, function(i,v) {        
+                                                
+                                                    resArray.push(v);
+                                                
+                                            });
+                                            
+                                        }
+                                    
+                                }
+                                else{
+                                        if(data.suggestions.more){
+                                            jQuery.each(data.suggestions.more, function(i,v) {
+                                                resArray.push(v);
+                                            });
+                                        
                                     }
-                                /* ajax response ends */
+                                }
+                                
+                                prevQString = data.tagID;
+                                
+                                jQuery('img.loadinerSearch').css('display','none');
+                                if(jQuery('form #select').val() == ''){
+                                    jQuery("form i.cross-search-q").css("display","none");
+                                }
+                                else{
+                                    jQuery("form i.cross-search-q").css("display","block");
+                                }
+                                
+                                    //jQuery.each( resArray, function( key, value ) {
 
-                    },
-                    complete: function(){
-                        // Handle the complete event
-                        jQuery("form i.cross-search-q").css("display","block");
-                        jQuery("img.loadinerSearch").css("display","none");
-                                    }
-                });
+                                    myDropDown.css('display', 'none');
+                                    jQuery("#input-dropdown ul").empty();
+                                    
+                                        jQuery("#input-dropdown ul").append(resArray);
+                                    myDropDown.css('display', 'block');
+                                    $this.data( "prev-value", qString.length );
+                                    //});
+
+
+                                }
+                            /* ajax response ends */
+
+                },
+                complete: function(){
+                    // Handle the complete event
+                    jQuery("form i.cross-search-q").css("display","block");
+                    jQuery("img.loadinerSearch").css("display","none");
+                }
+            });
             //}
         }, 700);
     });

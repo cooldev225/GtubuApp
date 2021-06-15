@@ -219,7 +219,7 @@
                                 </a>
                             </div>
                             <div class="lp-contact-support-outer pull-right">
-                                <a target="_blank" href="http://localhost/submit-listing/" >
+                                <a target="_blank" href="/ads" >
                                     <i class="fa fa-plus" aria-hidden="true"></i> 
                                     Anunciate
                                 </a>

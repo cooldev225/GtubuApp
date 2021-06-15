@@ -1,4 +1,4 @@
-<form autocomplete="off" class="form-inline" action="/" method="get" accept-charset="UTF-8">			
+<form autocomplete="off" class="form-inline" action="/listing" method="get" accept-charset="UTF-8">			
 	<div class="form-group lp-suggested-search  ">
 		<div class="input-group-addon lp-border">Que</div>
 		<div class="pos-relative">

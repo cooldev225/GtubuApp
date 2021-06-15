@@ -28,8 +28,8 @@ class ViewServiceProvider extends ServiceProvider
             [
                 'frontend.layouts.home',
                 'frontend.layouts.dashboard',
-                'frontend.layouts.searchfrm',
-                'frontend.layouts.schtopfrm',
+                'frontend.home',
+                'frontend.listing',
             ],
             'App\Http\Binds\DashboardComposer'
         );
