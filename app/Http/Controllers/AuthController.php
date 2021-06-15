@@ -114,14 +114,14 @@ class AuthController extends Controller
                 $row->time=date("Y-m-d H:i:s");
                 $row->save();
             }else return array(
-                'message'=> '<span class="alert alert-primary"><i class="fa fa-times" aria-hidden="true"></i>Error.</span>',
+                'message'=> '<span class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i>Error.</span>',
                 'loggedin'=> false,
                 'password'=>''
             );
             */
             try{
                 $mailData = new MailData();
-                $mailData->template='temps.password_changed';
+                $mailData->template='temps.magiclink';
                 $mailData->fromEmail = config('mail.from.address');
                 $mailData->userName = $request->input('telephone');
                 $mailData->toEmail = $email;
@@ -131,7 +131,7 @@ class AuthController extends Controller
                 Mail::to($mailData->toEmail)->send(new MailHelper($mailData));
             }catch(ConnectException $e){}
             return array(
-                'message'=> '<span class="alert alert-primary"><i class="fa fa-times" aria-hidden="true"></i>Por favor revise su casilla de correo electrónico.</span>',
+                'message'=> '<span class="alert alert-success"><i class="fa fa-times" aria-hidden="true"></i>Por favor revise su casilla de correo electrónico.</span>',
                 'loggedin'=> false,
                 'password'=>''
             );
@@ -194,7 +194,7 @@ class AuthController extends Controller
             $row->time=date("Y-m-d H:i:s");
             $row->save();
             return array(
-                'message'=> '<span class="alert alert-primary"><i class="fa fa-times" aria-hidden="true"></i>¡¡Exitosa!</span>',
+                'message'=> '<span class="alert alert-success"><i class="fa fa-times" aria-hidden="true"></i>¡¡Exitosa!</span>',
                 'loggedin'=> true
             );
         }

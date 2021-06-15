@@ -182,7 +182,7 @@
           <!-- start copy -->
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-              <p style="margin: 0;">Su contraseña es {{content}}. Para publicar un anuncio, haga clic <a href="http://gtabu.com/ads?t=new">aquí.</a></p>              
+              <p style="margin: 0;">Su contraseña es {{$content}}. Para publicar un anuncio, haga clic <a href="http://gtabu.com/ads?t=new">aquí.</a></p>              
             </td>
           </tr>
           <!-- start copy -->
